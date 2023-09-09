@@ -9,7 +9,7 @@ mainmenu()
 // Functions
 function clearmenu() {
 	let menu = document.getElementById("menu")
-	while (menu.hasChildNodes() != null) menu.removeChild(menu.firstChild)
+	while (menu.childElementCount > 0) menu.removeChild(menu.firstChild)
 }
 
 function mainmenu() {
