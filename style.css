@@ -30,7 +30,9 @@ body {
 }
 
 .subheaderBox {
+  margin: 0 auto;
   margin-top: 1%;
+  width: 1500px;
   padding: 15px;
   border-radius: 25px;
   text-align: center;
@@ -131,17 +133,17 @@ body {
 
 .textBox {
   margin-top: 1%;
-  padding: 15px;
+  padding: 5px;
   border-radius: 25px;
   text-align: center;
   position: relative;
   background: #0a0e0d;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   background-color:rgba(0, 0, 0, 0.8);
 }
 
 .headerPic {
-  width: 70%;
+  width: 50%;
   height: auto;
 }
