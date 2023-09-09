@@ -128,3 +128,20 @@ body {
   font-size: 30px;
   background-color:rgba(0, 0, 0, 0.8);
 }
+
+.textBox {
+  margin-top: 1%;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  position: relative;
+  background: #0a0e0d;
+  color: white;
+  font-size: 30px;
+  background-color:rgba(0, 0, 0, 0.8);
+}
+
+.headerPic {
+  width: 70%;
+  height: auto;
+}
