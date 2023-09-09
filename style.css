@@ -13,6 +13,11 @@ img {
   object-fit: contain;
 }
 
+body {
+  border-radius: 25px;
+  background-color:rgba(0, 0, 0, 0);
+}
+
 .headerBox {
   padding: 15px;
   border-radius: 25px;

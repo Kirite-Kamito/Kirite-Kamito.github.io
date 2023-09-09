@@ -60,7 +60,6 @@ function setupSubmenu() {
 
 function droplette() {
 	setupSubmenu()
-	console.log('test')
 	const currElement = document.getElementById("menu")
 }
 
