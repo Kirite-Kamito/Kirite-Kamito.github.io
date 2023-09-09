@@ -84,19 +84,29 @@ function projectHeader(title, picture) {
 }
 
 // Subheader and picture nodes
-function subHeader(title, picture) {
+function subHeader(array) {
 	const ele = document.createElement("div")
 	ele.classList.add('textBox')
 
-	const header = document.createElement('h2')
-	header.innerText = title
-
-	const pic = document.createElement('img')
-	pic.classList.add('headerPic')
-	pic.setAttribute('src', picture)
-
-	ele.appendChild(header)
-	ele.appendChild(pic)
+	for (const content of array) {
+		switch (content[0]) {
+			case 'h2':
+				const header2 = document.createElement('h2')
+				header2.innerText = content[1]
+				ele.appendChild(header2)
+				break
+			case 'i':
+				const pic = document.createElement('img')
+				pic.classList.add('headerPic')
+				pic.setAttribute('src', content[1])
+				ele.appendChild(pic)
+				break
+			default:
+				const para = document.createElement('p')
+				para.innerText = content[1]
+				ele.appendChild(para)
+		}
+	}
 
 	return ele
 }
@@ -119,55 +129,32 @@ function droplette() {
 	currElement.appendChild(projectHeading)
 
 	// Shader Con
-	const shader = document.createElement('div')
-	shader.classList.add('textBox')
-
-	const shaderHeader = document.createElement('h2')
-	shaderHeader.innerText = "Contribution: Post Processing Shaders"
-	shader.appendChild(shaderHeader)
-
-	const shaderPara = document.createElement('p')
-	shaderPara.innerText =
+	let shaderContents = [
+		['h2', 'Contribution: Post Processing Shaders'],
+		['p', 
 		"To create a unique feel in the game from traditional indie Unreal Engine Projects, a post processing shader was created. " +
 		"This shader is a combination of a Laplacian Filter, Cel Shading, and a Kuwahara Filter to create the illusion of the scene being painted."
-	shader.appendChild(shaderPara)
-
-	const shaderPic = document.createElement('img')
-	shaderPic.classList.add('headerPic')
-	shaderPic.setAttribute('src', 'images/Laplacian.JPG')
-	shader.appendChild(shaderPic)
-
-	const shaderPara2 = document.createElement('p')
-	shaderPara2.innerText = 
+		],
+		['i', 'images/Laplacian.JPG'],
+		['p',
 		"The Laplacian Filter uses the depth and the normal of a pixel (along with it's neighboring pixels) to determine whether or not the pixels are connected to each other" +
 		"The weights themselves are heavier and sharper the straighter the angle and the closer to the viewer that they appear. " +
 		"HLSL was used to allow for looping to expand the range around the pixel being checked with relative ease."
-	shader.appendChild(shaderPara2)
-
-	const shaderPic2 = document.createElement('img')
-	shaderPic2.classList.add('headerPic')
-	shaderPic2.setAttribute('src', 'images/Cel.JPG')
-	shader.appendChild(shaderPic2)
-
-	const shaderPara3 = document.createElement('p')
-	shaderPara3.innerText = 
+		],
+		['i', 'images/Cel.JPG'],
+		['p',
 		"The Cel Shader was used to simplify the range of colors to give it a more 'toony' style. " +
 		"This shader was implimented easily by desaturating Post Processing Input 0 and bucketing the resulting values to a fixed one." 
-	shader.appendChild(shaderPara3)
-
-	const shader3Pic = document.createElement('img')
-	shader3Pic.classList.add('headerPic')
-	shader3Pic.setAttribute('src', 'images/Kuwa.JPG')
-	shader.appendChild(shader3Pic)
-
-	const shaderPara4 = document.createElement('p')
-	shaderPara4.innerText = 
+		],
+		['i', 'images/Kuwa.JPG'],
+		['p',
 		"The Kuwahara Shader aims to emulate a painted type feel to the game. " +
 		"When applied to the cel shade as an input, it allows for a nice blend between buckets without resulting in too much loss of detail. " +
 		"A similar approach to both the Laplacian filter is implimented for this filter in HLSL, weighing the value of surrounding pixels to calculate the color value of the center."
-	shader.appendChild(shaderPara4)
+		]
+	]
 
-	currElement.append(shader)
+	currElement.append(subHeader(shaderContents))
 }
 
 function voxelEngine() {
