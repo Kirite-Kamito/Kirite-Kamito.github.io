@@ -1,0 +1,125 @@
+html {
+	background-color: #333333;
+	color: #ffffff;
+	background-image: url('images/battle.PNG');
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+}
+
+.headerBox {
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  position: relative;
+  background: #0a0e0d;
+  color: white;
+  font-size: 30px;
+  background-color:rgba(0, 0, 0, 0.7);
+}
+
+.subheaderBox {
+  margin-top: 1%;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  position: relative;
+  background: #0a0e0d;
+  color: white;
+  font-size: 30px;
+  background-color:rgba(0, 0, 0, 0.7);
+}
+
+.buttonBox {
+  margin-top: 1%;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  position: relative;
+  background: #0a0e0d;
+  color: white;
+  font-size: 30px;
+  background-color:rgba(0, 0, 0, 0.8);
+}
+
+.dropletteBlock {
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  background-image: url(images/DropletteMain.JPG);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 25px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  padding: 50px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.voxelBlock {
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  background-image: url(images/Voxel\ Engine.png);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 25px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  padding: 50px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.block {
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  background-image: url(images/battle.PNG);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 25px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  padding: 50px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.backButton {
+  margin-top: 10px;
+  width: 15%;
+  height: auto;
+  filter: invert();
+  transform: rotate(180deg);
+}
+
+.backButtonBox {
+  margin-top: 1%;
+  margin-right: 90%;
+  width: 20%;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  position: relative;
+  background: #0a0e0d;
+  color: white;
+  font-size: 30px;
+  background-color:rgba(0, 0, 0, 0.8);
+}
