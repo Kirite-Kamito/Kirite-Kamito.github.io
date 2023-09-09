@@ -134,7 +134,7 @@ function droplette() {
 
 	const shaderPic = document.createElement('img')
 	shaderPic.classList.add('headerPic')
-	shaderPic.setAttribute('src', 'images/Laplacian.jpg')
+	shaderPic.setAttribute('src', 'images/Laplacian.JPG')
 	shader.appendChild(shaderPic)
 
 	const shaderPara2 = document.createElement('p')
@@ -146,7 +146,7 @@ function droplette() {
 
 	const shaderPic2 = document.createElement('img')
 	shaderPic2.classList.add('headerPic')
-	shaderPic2.setAttribute('src', 'images/Cel.jpg')
+	shaderPic2.setAttribute('src', 'images/Cel.JPG')
 	shader.appendChild(shaderPic2)
 
 	const shaderPara3 = document.createElement('p')
@@ -157,7 +157,7 @@ function droplette() {
 
 	const shader3Pic = document.createElement('img')
 	shader3Pic.classList.add('headerPic')
-	shader3Pic.setAttribute('src', 'images/Kuwa.jpg')
+	shader3Pic.setAttribute('src', 'images/Kuwa.JPG')
 	shader.appendChild(shader3Pic)
 
 	const shaderPara4 = document.createElement('p')
