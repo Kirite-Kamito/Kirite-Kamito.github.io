@@ -1,5 +1,5 @@
 let navList = {
-	// function: [name, style]
+	// name: style
 	"Droplet": "dropletteBlock",
 	"Voxel Engine": "voxelBlock"
 }
@@ -24,7 +24,7 @@ function mainmenu() {
 					voxelEngine()
 					break
 				default:
-					droplette()
+					droplet()
 			}
 		})
 
@@ -57,39 +57,18 @@ function setupSubmenu() {
 	return backButton
 }
 
-// Skill list
-function skills(s) {
-	const skillBox = document.createElement("p")
-	skillBox.innerText = "Skills/Proficiencies Used: " + s
-	skillBox.classList.add('textBox')
-	return skillBox
-}
-
-// Title and Picture Nodes for project
-function projectHeader(title, picture) {
-	const ele = document.createElement("div")
-	ele.classList.add('textBox')
-
-	const header = document.createElement('h1')
-	header.innerText = title
-
-	const pic = document.createElement('img')
-	pic.classList.add('headerPic')
-	pic.setAttribute('src', picture)
-
-	ele.appendChild(header)
-	ele.appendChild(pic)
-
-	return ele
-}
-
-// Subheader and picture nodes
-function subHeader(array) {
+// Content Box for text, titles, and pictures
+function contentBox(array) {
 	const ele = document.createElement("div")
 	ele.classList.add('textBox')
 
 	for (const content of array) {
 		switch (content[0]) {
+			case 'h1':
+				const header1 = document.createElement('h1')
+				header1.innerText = content[1]
+				ele.appendChild(header1)
+				break
 			case 'h2':
 				const header2 = document.createElement('h2')
 				header2.innerText = content[1]
@@ -98,7 +77,7 @@ function subHeader(array) {
 			case 'i':
 				const pic = document.createElement('img')
 				pic.classList.add('headerPic')
-				pic.setAttribute('src', content[1])
+				pic.setAttribute('src', 'images/' + content[1])
 				ele.appendChild(pic)
 				break
 			default:
@@ -111,42 +90,46 @@ function subHeader(array) {
 	return ele
 }
 
-function droplette() {
+function droplet() {
 	const currElement = document.getElementById("menu")
 	
 	// Starting Elements
 	currElement.appendChild(setupSubmenu())
-	currElement.appendChild(skills("Unreal Engine, HLSL, Mathematics, Physics"))
 
-	// Project Header
-	const projectHeading = projectHeader('Droplet Project', 'images/DropletteMain.JPG')
+	// Skills Used
+	currElement.appendChild(contentBox([['p',"Skills used in Project: Unreal Engine, HLSL, Mathematics, Physics"]]))
 
-	const textElement = document.createElement('p')
-	textElement.innerText = 
+	// Project Introduction
+	let projectIntro = [
+		['h1', 'Droplet Project'],
+		['i', 'DropletteMain.JPG'],
+		['p',
 		"Droplet is a collaboration between 3 individuals to make an adventure/puzzle game to completion on Unreal Engine 5.3.0. " + 
 		"The project was started in May 2023 with hopes of an Early Access Release in December 2023."
-	projectHeading.appendChild(textElement)
-	currElement.appendChild(projectHeading)
+		]
+	]
 
-	// Shader Con
+	currElement.appendChild(contentBox(projectIntro))
+
+	// Shader
 	let shaderContents = [
 		['h2', 'Contribution: Post Processing Shaders'],
 		['p', 
 		"To create a unique feel in the game from traditional indie Unreal Engine Projects, a post processing shader was created. " +
 		"This shader is a combination of a Laplacian Filter, Cel Shading, and a Kuwahara Filter to create the illusion of the scene being painted."
 		],
-		['i', 'images/Laplacian.JPG'],
+		['i', 'Laplacian.JPG'],
 		['p',
 		"The Laplacian Filter uses the depth and the normal of a pixel (along with it's neighboring pixels) to determine whether or not the pixels are connected to each other" +
 		"The weights themselves are heavier and sharper the straighter the angle and the closer to the viewer that they appear. " +
 		"HLSL was used to allow for looping to expand the range around the pixel being checked with relative ease."
 		],
-		['i', 'images/Cel.JPG'],
+		['i', 'Cel.JPG'],
 		['p',
 		"The Cel Shader was used to simplify the range of colors to give it a more 'toony' style. " +
 		"This shader was implimented easily by desaturating Post Processing Input 0 and bucketing the resulting values to a fixed one." 
 		],
-		['i', 'images/Kuwa.JPG'],
+		['i', 'Kuwa.JPG'],
 		['p',
 		"The Kuwahara Shader aims to emulate a painted type feel to the game. " +
 		"When applied to the cel shade as an input, it allows for a nice blend between buckets without resulting in too much loss of detail. " +
@@ -154,7 +137,7 @@ function droplette() {
 		]
 	]
 
-	currElement.append(subHeader(shaderContents))
+	currElement.append(contentBox(shaderContents))
 }
 
 function voxelEngine() {
